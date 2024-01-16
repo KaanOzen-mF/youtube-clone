@@ -8,8 +8,10 @@ function Feed() {
   const [videos, setVideos] = useState([]);
 
   useEffect(() => {
-    fetchFromAPI(`search?part=snippet&q
-    =${selectedCategory}`).then((data) => setVideos(data));
+    console.log(selectedCategory);
+    fetchFromAPI(
+      `search?q=${selectedCategory}&part=snippet%2Cid&regionCode=US&maxResults=50&order=rating`
+    ).then((data) => setVideos(data));
   }, [selectedCategory]);
 
   return (
@@ -44,9 +46,9 @@ function Feed() {
           {selectedCategory}
           <span style={{ color: "#F31503", marginLeft: "8px" }}>videos</span>
         </Typography>
-      </Box>
 
-      <Videos videos={videos} />
+        <Videos videos={videos} />
+      </Box>
     </Stack>
   );
 }
