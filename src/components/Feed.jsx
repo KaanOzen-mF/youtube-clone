@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Box, Stack, Typography } from "@mui/material";
-import { SideBar, Videos } from "./";
+import { ChannelCard, SideBar, Videos } from "./";
 import { fetchFromAPI } from "../utils/fetchFromApi";
 
 function Feed() {
@@ -8,12 +8,12 @@ function Feed() {
   const [videos, setVideos] = useState([]);
 
   useEffect(() => {
-    console.log(selectedCategory);
     fetchFromAPI(
       `search?q=${selectedCategory}&part=snippet%2Cid&regionCode=US&maxResults=50&order=rating`
-    ).then((data) => setVideos(data));
+    ).then((data) => setVideos(data.items));
   }, [selectedCategory]);
 
+  console.log(videos);
   return (
     <Stack sx={{ flexDirection: { sx: "column", md: "row" } }}>
       <Box
