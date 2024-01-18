@@ -42,6 +42,7 @@ function VideoCard({
             {title.slice(0, 60) || demoVideoTitle.slice(0, 60)}
           </Typography>
         </Link>
+
         <Link to={channelId ? `/channel/${channelId}` : demoChannelUrl}>
           <Typography variant="subtitle2" fontWeight="bold" color="gray">
             {channelTitle.slice(0, 60) || demoChannelTitle.slice(0, 60)}
