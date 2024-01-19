@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Box, Stack, Typography } from "@mui/material";
-import { ChannelCard, SideBar, Videos } from "./";
+import { SideBar, Videos } from "./";
 import { fetchFromAPI } from "../utils/fetchFromApi";
 
 function Feed() {
@@ -13,7 +13,6 @@ function Feed() {
     ).then((data) => setVideos(data.items));
   }, [selectedCategory]);
 
-  console.log(videos);
   return (
     <Stack sx={{ flexDirection: { sx: "column", md: "row" } }}>
       <Box
