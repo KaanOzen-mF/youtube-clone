@@ -39,6 +39,8 @@ function VideoDetail() {
               url={`https://wwww.youtube.com/watch?v=${id}`}
               className="react-player"
               controls
+              width="100%"
+              height="720px"
             />
             <Typography color="#fff" variant="h5" fontWeight="bold" p={2}>
               {title}
