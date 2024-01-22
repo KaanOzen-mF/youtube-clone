@@ -4,7 +4,6 @@ import { Typography, Card, CardContent, CardMedia } from "@mui/material";
 import { CheckCircle } from "@mui/icons-material";
 
 import {
-  demoThumbnailUrl,
   demoVideoUrl,
   demoVideoTitle,
   demoChannelUrl,
@@ -29,11 +28,11 @@ function VideoCard({
         borderRadius: 0,
       }}
     >
-      <Link to={videoId ? `/vidoe/${videoId}` : demoVideoUrl}>
+      <Link to={videoId ? `/video/${videoId}` : demoVideoUrl}>
         <CardMedia
           image={thumbnails?.high?.url}
           alt={snippet?.title}
-          sx={{ width: 358, height: 180 }}
+          sx={{ width: 358, height: 200 }}
         />
       </Link>
       <CardContent sx={{ backgroundColor: "#1e1e1e", height: "106px" }}>
