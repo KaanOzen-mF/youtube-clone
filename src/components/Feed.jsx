@@ -9,7 +9,7 @@ function Feed() {
 
   useEffect(() => {
     fetchFromAPI(
-      `search?q=${selectedCategory}&part=snippet%2Cid&regionCode=US&maxResults=50&order=rating`
+      `search?q=${selectedCategory}&part=snippet%2Cid&regionCode=TR&maxResults=50&order=rating`
     ).then((data) => setVideos(data.items));
   }, [selectedCategory]);
 
@@ -31,7 +31,7 @@ function Feed() {
           variant="body2"
           sx={{ mt: 1.5, color: "#fff" }}
         >
-          Copyright Kaan Date
+          Copyright © {new Date().getFullYear()} Kaan
         </Typography>
       </Box>
 
